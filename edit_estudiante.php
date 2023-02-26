@@ -13,6 +13,7 @@
             $codigo = $row['codigo'];
             $nombre = $row['nombre'];
             $apellido = $row['apellido'];
+            $id_grado = $row['id_grado'];
         }
     }
 
@@ -21,8 +22,9 @@
         $codigo = $_POST['codigo'];
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
+        $id_grado = $_POST['id_grado'];
 
-        $query = "UPDATE ESTUDIANTE SET codigo = '$codigo', nombre = '$nombre', apellido = '$apellido' WHERE id = '$id'";
+        $query = "UPDATE ESTUDIANTE SET codigo = '$codigo', nombre = '$nombre', apellido = '$apellido', id_grado = $id_grado WHERE id = '$id'";
         
         mysqli_query($connection, $query);
 
@@ -51,6 +53,19 @@
                     <div class="mb-3">
                         <input type="text" name="apellido" class="form-control" value="<?php echo $apellido; ?>"
                         placeholder="Actualizar apellido" autofocus>
+                    </div>
+                    <div class="form-floating">
+                        <select class="select form-select" name="id_grado" aria-label="Floating label select example" id="floatingSelect">
+                            <?php
+                                $queryAllLevels = "SELECT * FROM GRADO";
+                                $all_levels = mysqli_query($connection, $queryAllLevels);  
+
+                                while($row = mysqli_fetch_array($all_levels)) { ?>
+                                    <option value="<?php echo $row['id'] ?>"><?php echo $row['grado'] ?></option>
+                                <?php } ?> 
+                            
+                        </select>
+                        <label for="floatingSelect">Grado del estudiante</label>
                     </div>
                     <button class="btn btn-success btn-block" name="update_estudiante">Actualizar</button>
                 </form>

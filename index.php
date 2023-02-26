@@ -28,6 +28,20 @@
                         <input type="text" name="apellido" class="form-control"
                         placeholder="Apellido del estudiante">
                     </div>
+                    <div class="form-floating">
+                        <select class="select form-select" name="id_grado" aria-label="Floating label select example" id="floatingSelect">
+                            <?php
+                                $queryAllLevels = "SELECT * FROM GRADO";
+                                $all_levels = mysqli_query($connection, $queryAllLevels);  
+
+                                while($row = mysqli_fetch_array($all_levels)) { ?>
+                                    <option value="<?php echo $row['id'] ?>"><?php echo $row['grado'] ?></option>
+                                <?php } ?> 
+                            
+                        </select>
+                        <label for="floatingSelect">Grado del estudiante</label>
+                    </div>
+                    <br>
                     <input type="submit" class="btn btn-success btn-block" name="save_estudiante" value="Guardar">
                 </form>
             </div>
