@@ -17,7 +17,7 @@
             <div class="card card-body">
                 <form action="save_nota.php" method="POST">
                     <div class="form-floating">
-                        <select class="select form-select" name="id_estudiante" aria-label="Floating label select example" id="floatingSelectStudent">
+                        <select class="select form-select" name="id_estudiante" aria-label="Floating label select example" id="floatingSelectStudent" autofocus>
                             <?php
                                 $queryAllStudents = "SELECT * FROM ESTUDIANTE";
                                 $all_students = mysqli_query($connection, $queryAllStudents);  
@@ -42,9 +42,10 @@
                         <label for="floatingSelectCourse">Selecciona una materia</label>
                     </div>
                     <br>
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Promedio</span>
                         <input type="text" name="promedio" class="form-control"
-                        placeholder="Promedio" autofocus>
+                        placeholder="10">
                     </div>
                     <input type="submit" class="btn btn-success btn-block" name="save_nota" value="Guardar">
                 </form>
@@ -52,7 +53,7 @@
         
         </div>
         
-        <div class="col-md-8">
+        <div class="col-md-8 table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -73,7 +74,7 @@
                                 <td><?php echo $row['materia'] ?></td>
                                 <td><?php echo $row['promedio'] ?></td>
                                 <td>
-                                 <a href="edit_nota.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                                 <a href="edit_nota.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">
                                     <i class="fas fa-edit"></i>
                                  </a>   
                                  <a href="edit_nota.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">

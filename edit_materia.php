@@ -38,15 +38,19 @@
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
                 <form action="edit_materia.php?id=<?php echo $_GET['id']?>" method="POST">
-                    <div class="mb-3">
-                        <input type="text" name="codigo" class="form-control"
-                        placeholder="Código" autofocus>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Código</span>
+                        <input type="text" name="codigo" class="form-control" value="<?php echo $codigo; ?>" autofocus>
                     </div>
-                    <div class="mb-3">
-                        <input type="text" name="materia" class="form-control"
-                        placeholder="Materia">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Materia</span>
+                        <input type="text" name="materia" class="form-control" value="<?php echo $materia; ?>">
                     </div>
-                    <button class="btn btn-success btn-block" name="update_materia">Actualizar</button>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-block" name="update_materia">Actualizar</button>
+                        <a href="materias.php" class="btn btn-secondary btn-block">Volver</a>
+                    </div>
+                    
                 </form>
             </div>
         </div>

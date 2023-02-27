@@ -97,11 +97,15 @@
                         <label for="floatingSelectCourse">Selecciona una materia</label>
                     </div>
                     <br>
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Promedio</span>
                         <input type="text" name="promedio" class="form-control" value="<?php echo $promedio; ?>"
                         placeholder="Promedio" autofocus>
                     </div>
-                    <button class="btn btn-success btn-block" name="update_nota">Actualizar</button>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-block" name="update_nota">Actualizar</button>
+                        <a href="notas.php" class="btn btn-secondary btn-block">Volver</a>
+                    </div>
                 </form>
             </div>
         </div>

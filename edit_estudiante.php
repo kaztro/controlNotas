@@ -42,17 +42,17 @@
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
                 <form action="edit_estudiante.php?id=<?php echo $_GET['id']?>" method="POST">
-                    <div class="mb-3">
-                        <input type="text" name="codigo" class="form-control" value="<?php echo $codigo; ?>"
-                        placeholder="Actualizar cogigo" autofocus>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Código</span>
+                        <input type="text" name="codigo" class="form-control" value="<?php echo $codigo; ?>" autofocus>
                     </div>
-                    <div class="mb-3">
-                        <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>"
-                        placeholder="Actualizar nombre" autofocus>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                        <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
                     </div>
-                    <div class="mb-3">
-                        <input type="text" name="apellido" class="form-control" value="<?php echo $apellido; ?>"
-                        placeholder="Actualizar apellido" autofocus>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+                        <input type="text" name="apellido" class="form-control" value="<?php echo $apellido; ?>">
                     </div>
                     <div class="form-floating">
                         <select class="select form-select" name="id_grado" aria-label="Floating label select example" id="floatingSelect">
@@ -77,12 +77,16 @@
                                             echo $row['grado'];
                                         }
                                     ?></option>
-                                <?php } ?> 
-                            
+                                <?php } ?>     
                         </select>
                         <label for="floatingSelect">Grado del estudiante</label>
                     </div>
-                    <button class="btn btn-success btn-block" name="update_estudiante">Actualizar</button>
+                    <br>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-block" name="update_estudiante">Actualizar</button>
+                        <a href="index.php" class="btn btn-secondary btn-block">Volver</a>
+                    </div>
+                    
                 </form>
             </div>
         </div>

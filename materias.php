@@ -16,13 +16,15 @@
 
             <div class="card card-body">
                 <form action="save_materia.php" method="POST">
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Código</span>
                         <input type="text" name="codigo" class="form-control"
-                        placeholder="Código" autofocus>
+                        placeholder="EF7324" autofocus>
                     </div>
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Materia</span>
                         <input type="text" name="materia" class="form-control"
-                        placeholder="Materia">
+                        placeholder="Matemáticas">
                     </div>
                     <input type="submit" class="btn btn-success btn-block" name="save_materia" value="Guardar">
                 </form>
@@ -30,8 +32,8 @@
         
         </div>
         
-        <div class="col-md-8">
-            <table class="table table-bordered">
+        <div class="col-md-8 table-responsive">
+            <table class="table table-bordered align-middle">
                 <thead>
                     <tr>
                         <th>Código</th>
@@ -49,7 +51,7 @@
                                 <td><?php echo $row['materia'] ?></td>
                                 <td>
                                     <a href="edit_materia.php?id=<?php echo $row['id']?>"
-                                    class="btn btn-secondary">
+                                    class="btn btn-primary">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="delete_materia.php?id=<?php echo $row['id']?>"

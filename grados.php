@@ -16,9 +16,10 @@
 
             <div class="card card-body">
                 <form action="save_grado.php" method="POST">
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Grado</span>
                         <input type="text" name="grado" class="form-control"
-                        placeholder="Grado" autofocus>
+                        placeholder="Primero" autofocus>
                     </div>
                     <input type="submit" class="btn btn-success btn-block" name="save_grado" value="Guardar">
                 </form>
@@ -26,8 +27,8 @@
         
         </div>
         
-        <div class="col-md-8">
-            <table class="table table-bordered">
+        <div class="col-md-8 table-responsive">
+            <table class="table table-bordered align-middle">
                 <thead>
                     <tr>
                         <th>Grado</th>
@@ -43,7 +44,7 @@
                                 <td><?php echo $row['grado'] ?></td>
                                 <td>
                                     <a href="edit_grado.php?id=<?php echo $row['id']?>"
-                                    class="btn btn-secondary">
+                                    class="btn btn-primary">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="delete_grado.php?id=<?php echo $row['id']?>"

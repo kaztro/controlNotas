@@ -36,11 +36,14 @@
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
                 <form action="edit_grado.php?id=<?php echo $_GET['id']?>" method="POST">
-                    <div class="mb-3">
-                        <input type="text" name="grado" class="form-control" value="<?php echo $grado; ?>"
-                        placeholder="Actualizar grado" autofocus>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Grado</span>
+                        <input type="text" name="grado" class="form-control" value="<?php echo $grado; ?>">
                     </div>
-                    <button class="btn btn-success btn-block" name="update_grado">Actualizar</button>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-block" name="update_grado">Actualizar</button>
+                        <a href="grados.php" class="btn btn-secondary btn-block">Volver</a>
+                    </div>
                 </form>
             </div>
         </div>

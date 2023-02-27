@@ -16,17 +16,20 @@
 
             <div class="card card-body">
                 <form action="save_estudiante.php" method="POST">
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Código</span>
                         <input type="text" name="codigo" class="form-control"
-                        placeholder="Codigo del estudiante" autofocus>
+                        placeholder="00229017" autofocus>
                     </div>
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
                         <input type="text" name="nombre" class="form-control"
-                        placeholder="Nombre del estudiante">
+                        placeholder="German">
                     </div>
-                    <div class="mb-3">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
                         <input type="text" name="apellido" class="form-control"
-                        placeholder="Apellido del estudiante">
+                        placeholder="Castro">
                     </div>
                     <div class="form-floating">
                         <select class="select form-select" name="id_grado" aria-label="Floating label select example" id="floatingSelect">
@@ -48,8 +51,8 @@
         
         </div>
         
-        <div class="col-md-8">
-            <table class="table table-bordered">
+        <div class="col-md-8 table-responsive">
+            <table class="table table-bordered align-middle">
                 <thead>
                     <tr>
                         <th>Código</th>
@@ -70,7 +73,7 @@
                                 <td><?php echo $row['apellido'] ?></td>
                                 <td>
                                     <a href="edit_estudiante.php?id=<?php echo $row['id']?>"
-                                    class="btn btn-secondary">
+                                    class="btn btn-primary">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="delete_estudiante.php?id=<?php echo $row['id']?>"
