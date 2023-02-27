@@ -58,10 +58,25 @@
                         <select class="select form-select" name="id_grado" aria-label="Floating label select example" id="floatingSelect">
                             <?php
                                 $queryAllLevels = "SELECT * FROM GRADO";
-                                $all_levels = mysqli_query($connection, $queryAllLevels);  
+                                $all_levels = mysqli_query($connection, $queryAllLevels);
+                                
+                                $selectedLevelName = "SELECT grado FROM GRADO WHERE id = '$id_grado'";
+                                $selected = mysqli_query($connection, $selectedLevelName);
+
+                                while($row = mysqli_fetch_array($selected)) {
+                                    $gradoSeleccionado = $row['grado']; ?>
+
+                                    <option value="<?php echo $id_grado ?>"><?php echo $gradoSeleccionado ?></option>
+                                <?php } 
 
                                 while($row = mysqli_fetch_array($all_levels)) { ?>
-                                    <option value="<?php echo $row['id'] ?>"><?php echo $row['grado'] ?></option>
+                                    <option value="<?php echo $row['id'] ?>"><?php 
+                                        if($row['grado'] == $gradoSeleccionado) {
+                                            continue;
+                                        } else {
+                                            echo $row['grado'];
+                                        }
+                                    ?></option>
                                 <?php } ?> 
                             
                         </select>

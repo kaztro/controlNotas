@@ -27,7 +27,7 @@
                     <a class="nav-link active" aria-current="page" href="materias.php">Materias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Notas</a>
+                    <a class="nav-link active" aria-current="page" href="notas.php">Notas</a>
                 </li>
             </ul>
         </div>
