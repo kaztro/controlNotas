@@ -12,7 +12,7 @@
             $row = mysqli_fetch_array($result);
             $id_estudiante = $row['id_estudiante'];
             $id_materia = $row['id_materia'];
-            $promedio = $row['promedio'];
+            $nota = $row['nota'];
         }
     }
 
@@ -20,9 +20,9 @@
         $id = $_GET['id'];
         $id_estudiante = $_POST['id_estudiante'];
         $id_materia = $_POST['id_materia'];
-        $promedio = $_POST['promedio'];
+        $nota = $_POST['nota'];
 
-        $query = "UPDATE NOTA SET id_estudiante = $id_estudiante, id_materia = $id_materia, promedio = '$promedio' WHERE id = '$id'";
+        $query = "UPDATE NOTA SET id_estudiante = $id_estudiante, id_materia = $id_materia, nota = '$nota' WHERE id = '$id'";
         
         mysqli_query($connection, $query);
 
@@ -98,9 +98,9 @@
                     </div>
                     <br>
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Promedio</span>
-                        <input type="text" name="promedio" class="form-control" value="<?php echo $promedio; ?>"
-                        placeholder="Promedio" autofocus>
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Nota</span>
+                        <input type="text" name="nota" class="form-control" value="<?php echo $nota; ?>"
+                        placeholder="Nota" autofocus>
                     </div>
                     <div class="d-flex justify-content-around">
                         <button class="btn btn-success btn-block" name="update_nota">Actualizar</button>
